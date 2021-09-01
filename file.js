@@ -58,20 +58,13 @@ function selectCategoryScreen(props) {
                             distinctItems.push(element)
                         }
                     }
-
                 });
-                // const uniqueValues = [...new Map(response.data.map(item =>
-                //     console.log("item", item)
-                //     [item["property"]["skillcategory"], item]
-
-                // )).values()];
                 setCategory(distinctItems);
                 setloading(false);
             }
         } catch (error) {
             setloading(false);
-            firebase.crashlytics().recordError(error);
-            //  console.log(`error`, error);
+            firebase.crashlytics().recordErr 
         }
     }
 
@@ -82,13 +75,11 @@ function selectCategoryScreen(props) {
             if (response.data != null && response.data != 'undefind' && response.status == 200) {
                 const slice = response.data.slice(0, 5)
                 setFilteredDataSource(response.data);
-                setConsultant(slice);
-                // setloading(false);
+                setConsultant(slice);                
             }
         } catch (error) {
             setloading(false);
-            firebase.crashlytics().recordError(error);
-            // console.log(`error`, error);
+            firebase.crashlytics().recordError(error);            
         }
     }
 
